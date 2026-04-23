@@ -3,6 +3,7 @@ package com.nagp.microservices.productservice.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
 import software.amazon.awssdk.regions.Region;
@@ -16,8 +17,7 @@ public class DynamoDbConfig {
 	public DynamoDbClient dynamoDbClient() {
 		return DynamoDbClient.builder()
 				.region(Region.AP_SOUTH_1)
-				// This looks for your AWS CLI credentials on your laptop
-				.credentialsProvider(ProfileCredentialsProvider.create())
+				.credentialsProvider(DefaultCredentialsProvider.create())
 				.build();
 	}
 
