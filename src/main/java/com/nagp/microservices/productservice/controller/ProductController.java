@@ -13,7 +13,8 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/products")
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://d2emlgpiz49p5b.cloudfront.net")
 public class ProductController {
 
 	private final ProductRepository productRepository;
