@@ -1,5 +1,9 @@
 pipeline {
     agent any
+	tools {
+        jdk 'Java17' 
+        maven 'Maven3'
+    }
     environment {
         AWS_REGION    = 'ap-south-1'
         ECR_REGISTRY  = '096568562814.dkr.ecr.ap-south-1.amazonaws.com'
